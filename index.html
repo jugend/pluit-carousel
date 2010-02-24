@@ -10,8 +10,133 @@
     <link rel="stylesheet" href="css/pluit-carousel-skins.css" type="text/css" media="screen">
   </head>
   <body>
-    <!-- Photo Tag Skin -->
-    <div id="carousel-1" class="pluit-carousel photo-tag-skin">
+    <h1>Pluit Carousel &ndash; Prototype Carousel</h1>
+    <cite>by <a href="http://www.pluitsolutions.com">Herryanto Siatono</a>
+    
+    
+    <h2>Description</h2>
+    
+    <p>One of the most widely used Javascript widgets is a carousel, it is used all over the places from 
+    photo slides, feature highlights, page browsing, top stories panel, and others. 
+    Same concept but different looks and feels.</p>
+    
+    <p>Pluit Carousel is a simple carousel written to be as bare and simple as possible so you can easily 
+    customize to meet your carousel needs. The idea is to use the same semantically structured HTML and Javascript 
+    initialization codes, and applying different skins for the different look and feel. If you need more advanced
+    behavior, then you can easily extend Pluit.Carousel to meet your needs.</p>
+    
+    <h2>Usage</h2>
+    
+    <ol>
+      <li>Include the CSS:
+        <pre>
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/pluit-carousel.css&quot; type=&quot;text/css&quot; media=&quot;screen&quot;&gt;
+        </pre>
+      </li>
+      <li>
+        Create the HTML tags:
+        <pre>
+&lt;div class=&quot;pluit-carousel&quot;&gt;
+  &lt;div class=&quot;viewport&quot;&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;img src=&quot;http://l.yimg.com/g/images/home_photo_megansoh.jpg&quot; alt=&quot;Photo by megansoh&quot; width=&quot;500&quot; height=&quot;333&quot; /&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;img src=&quot;http://l.yimg.com/g/images/home_photo_ccgd.jpg&quot; alt=&quot;Photo by ccgd&quot; width=&quot;500&quot; height=&quot;333&quot; /&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;img src=&quot;http://l.yimg.com/g/images/home_photo_lyn.jpg&quot; alt=&quot;Photo by lyn&quot; width=&quot;500&quot; height=&quot;333&quot; /&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+        </pre>
+      </li>
+      <li>Include and initialize the JavaScripts:
+        <pre>
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/prototype.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/scriptaculous.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/effects.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/pluit-carousel.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+  new Pluit.Carousel.init({
+    circular: true
+  });
+&lt;/script&gt;
+        </pre>
+      </li>
+      <li>Customize your carousel style, sample customized skins are included in <code>css/pluit-carousel-skins.css</code>, 
+          append to <code>pluit-carousel</code> class: </li>
+          <pre>
+&lt;div class=&quot;pluit-carousel custom-skin&quot;&gt;
+...
+&lt;/div&gt;
+</pre>
+    </ol>
+    
+    <h2>Options</h2>
+    
+    <table>
+      <thead>
+        <th>Name</th>
+        <th>Default</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>circular</td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>hideAutoNav</td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>animDuration</td>
+          <td>0.5</td>
+        </tr>
+        <tr>
+          <td>viewportClassName</td>
+          <td>viewport</td>
+        </tr>
+        <tr>
+          <td>navClassName</td>
+          <td>nav</td>
+        </tr>
+        <tr>
+          <td>prevClassName</td>
+          <td>prev</td>
+        </tr>
+        <tr>
+          <td>nextClassName</td>
+          <td>next</td>
+        </tr>
+        <tr>
+          <td>pagesClassName</td>
+          <td>pages</td>
+        </tr>
+        <tr>
+          <td>pageClassNamePrefix</td>
+          <td>page-</td>
+        </tr>
+        <tr>
+          <td>activeClassName</td>
+          <td>active</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <h2>Download</h2>
+    
+    <pre>
+      
+    </pre>
+    
+    <h2>Example</h2>
+    
+    <h3>Simple Carousel</h3>
+
+    <div class="pluit-carousel photo-tag-skin">
       <div class="viewport">
         <ul>
           <li>
@@ -22,12 +147,42 @@
             </div>
           </li>
           <li>
+            <img src="http://l.yimg.com/g/images/home_photo_ccgd.jpg" alt="Photo by ccgd" width="500" height="333" />
+            <div class="tag">
+              <em>by <a href="http://www.flickr.com/photos/ccgd/">ccgd</a></em>
+              <div class="shadow"></div>
+            </div>
+          </li>
+          <li>
+            <img src="http://l.yimg.com/g/images/home_photo_lyn.jpg" alt="Photo by lyn" width="500" height="333" />
+            <div class="tag">
+              <em>by <a href="http://www.flickr.com/photos/ccgd/">ccgd</a></em>
+              <div class="shadow"></div>
+            </div>
+          </li>
+          <li>
             <img src="http://l.yimg.com/g/images/home_photo_tarotastic.jpg" alt="Photo by toratostic" width="500" height="333" />
             <div class="tag">
               <em>by <a href="http://www.flickr.com/photos/tjt195/">tarotastic</a></em>
               <div class="shadow"></div>
             </div>
           </li>
+          <li>
+            <img src="http://l.yimg.com/g/images/home_photo_xdjio.jpg" alt="Photo by xdjio" width="500" height="333" />
+            <div class="tag">
+              <em>by <a href="http://www.flickr.com/photos/xdjio/">xdjio</a></em>
+              <div class="shadow"></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <h3>Custom Navigation</h3>
+
+    <div class="pluit-carousel photo-tag-skin custom-nav-skin">
+      <div class="viewport">
+        <ul>
           <li>
             <img src="http://l.yimg.com/g/images/home_photo_ccgd.jpg" alt="Photo by ccgd" width="500" height="333" />
             <div class="tag">
@@ -49,21 +204,6 @@
               <div class="shadow"></div>
             </div>
           </li>
-        </ul>
-      </div>
-    </div>
-    
-    <!-- Side Nav Skin -->
-    <div id="carousel-2" class="pluit-carousel photo-tag-skin side-nav-skin">
-      <div class="viewport">
-        <ul>
-          <li>
-            <img src="http://l.yimg.com/g/images/home_photo_megansoh.jpg" alt="Photo by megansoh" width="500" height="333" />
-            <div class="tag">
-              <em>by <a href="http://www.flickr.com/photos/absolutely_loverly/">megan_soh</a></em>
-              <div class="shadow"></div>
-            </div>
-          </li>
           <li>
             <img src="http://l.yimg.com/g/images/home_photo_tarotastic.jpg" alt="Photo by toratostic" width="500" height="333" />
             <div class="tag">
@@ -72,23 +212,9 @@
             </div>
           </li>
           <li>
-            <img src="http://l.yimg.com/g/images/home_photo_ccgd.jpg" alt="Photo by ccgd" width="500" height="333" />
+            <img src="http://l.yimg.com/g/images/home_photo_megansoh.jpg" alt="Photo by megansoh" width="500" height="333" />
             <div class="tag">
-              <em>by <a href="http://www.flickr.com/photos/ccgd/">ccgd</a></em>
-              <div class="shadow"></div>
-            </div>
-          </li>
-          <li>
-            <img src="http://l.yimg.com/g/images/home_photo_lyn.jpg" alt="Photo by lyn" width="500" height="333" />
-            <div class="tag">
-              <em>by <a href="http://www.flickr.com/photos/ccgd/">ccgd</a></em>
-              <div class="shadow"></div>
-            </div>
-          </li>
-          <li>
-            <img src="http://l.yimg.com/g/images/home_photo_xdjio.jpg" alt="Photo by xdjio" width="500" height="333" />
-            <div class="tag">
-              <em>by <a href="http://www.flickr.com/photos/xdjio/">xdjio</a></em>
+              <em>by <a href="http://www.flickr.com/photos/absolutely_loverly/">megan_soh</a></em>
               <div class="shadow"></div>
             </div>
           </li>
@@ -96,10 +222,70 @@
       </div>
     </div>
     
-    <!-- Top Stories -->
-    <div id="carousel-3" class="pluit-carousel top-stories-skin">
+    
+    <h3>Multiple Image View</h3>
+    
+    <div class="pluit-carousel">
       <div class="viewport">
         <ul>
+          <li>
+            <ul>
+              <li><img src="http://farm5.static.flickr.com/4002/4376028192_26b21c9ddd_m.jpg" alt="Photo 5" width="240" height="160" /></li>
+              <li><img src="http://farm5.static.flickr.com/4016/4373281807_3b6a63701b_m.jpg" alt="Photo 1" width="240" height="160" /></li>
+              <li><img src="http://farm5.static.flickr.com/4072/4381813361_c5ccf2151e_m.jpg" alt="Photo 6" width="240" height="160" /></li>
+            </ul>
+          </li>
+          <li>
+            <ul>
+              <li><img src="http://farm3.static.flickr.com/2744/4369557649_7bc4efe07b_m.jpg" alt="Photo 4" width="240" height="160" /></li>
+              <li><img src="http://farm5.static.flickr.com/4014/4379935239_c13641584e_m.jpg" alt="Photo 12" width="240" height="160" /></li>
+              <li><img src="http://farm5.static.flickr.com/4049/4378744364_9bfbf31e1c_m.jpg" alt="Photo 3" width="240" height="160" /></li>
+            </ul>
+          </li>
+          <li>
+            <ul>
+              <li><img src="http://farm3.static.flickr.com/2677/4369865709_8693afe416_m.jpg" alt="Photo 9" width="240" height="160" /></li>
+              <li><img src="http://farm5.static.flickr.com/4068/4367130821_7ce9507488_m.jpg" alt="Photo 7" width="240" height="160" /></li>
+              <li><img src="http://farm5.static.flickr.com/4001/4370419121_81cc9a48ce_m.jpg" alt="Photo 10" width="240" height="160" /></li>
+            </ul>
+          </li>
+          <li>
+            <ul>
+              <li><img src="http://farm5.static.flickr.com/4005/4376120680_826f45f460_m.jpg" alt="Photo 8" width="240" height="160" /></li>
+              <li><img src="http://farm5.static.flickr.com/4058/4368673613_e435b6cc23_m.jpg" alt="Photo 2" width="240" height="160" /></li>
+              <li><img src="http://farm5.static.flickr.com/4029/4378795385_c4965ac84e_m.jpg" alt="Photo 11" width="240" height="160" /></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    
+    <h3>Top Stories</h3>
+    
+    <div class="pluit-carousel top-stories-skin">
+      <div class="viewport">
+        <ul>
+          <li>
+            <img src="http://l.yimg.com/g/images/home_photo_lyn.jpg" alt="Photo by lyn" width="500" height="333" />
+            <div class="desc">
+              <em>
+                Photo Description 4<br/>
+                by <a href="http://www.flickr.com/photos/ccgd/">ccgd</a>
+              </em>
+              <div class="shadow"></div>
+            </div>
+          </li>
+          <li>
+            <img src="http://l.yimg.com/g/images/home_photo_ccgd.jpg" alt="Photo by ccgd" width="500" height="333" />
+            <div class="desc">
+              <em>
+                Photo Description 3<br/>
+                by <a href="http://www.flickr.com/photos/ccgd/">ccgd</a>
+              </em>
+              <div class="shadow"></div>
+            </div>
+          </li>
           <li>
             <img src="http://l.yimg.com/g/images/home_photo_megansoh.jpg" alt="Photo by megansoh" width="500" height="333" />
             <div class="desc">
@@ -116,26 +302,6 @@
               <em>
                 Photo Description 2<br/>
                 by <a href="http://www.flickr.com/photos/tjt195/">tarotastic</a>
-              </em>
-              <div class="shadow"></div>
-            </div>
-          </li>
-          <li>
-            <img src="http://l.yimg.com/g/images/home_photo_ccgd.jpg" alt="Photo by ccgd" width="500" height="333" />
-            <div class="desc">
-              <em>
-                Photo Description 3<br/>
-                by <a href="http://www.flickr.com/photos/ccgd/">ccgd</a>
-              </em>
-              <div class="shadow"></div>
-            </div>
-          </li>
-          <li>
-            <img src="http://l.yimg.com/g/images/home_photo_lyn.jpg" alt="Photo by lyn" width="500" height="333" />
-            <div class="desc">
-              <em>
-                Photo Description 4<br/>
-                by <a href="http://www.flickr.com/photos/ccgd/">ccgd</a>
               </em>
               <div class="shadow"></div>
             </div>
@@ -165,42 +331,6 @@
           </ul>
         </li>
       </ul>
-    </div>
-    
-    <!-- Image Set Skin -->
-    <div id="carousel-5" class="pluit-carousel image-set-skin">
-      <div class="viewport">
-        <ul>
-          <li>
-            <ul class="image-set">
-              <li><img src="http://farm3.static.flickr.com/2689/4068641458_e22ec6595e_s.jpg" alt="Photo 1" width="75" height="75" /></li>
-              <li><img src="http://farm3.static.flickr.com/2708/4067890693_2515dfdd33_s.jpg" alt="Photo 2" width="75" height="75" /></li>
-              <li><img src="http://farm3.static.flickr.com/2474/4067909903_b9f318b3b6_s.jpg" alt="Photo 3" width="75" height="75" /></li>
-            </ul>
-          </li>
-          <li>
-            <ul class="image-set">
-              <li><img src="http://farm3.static.flickr.com/2474/4067909903_b9f318b3b6_s.jpg" alt="Photo 4" width="75" height="75" /></li>
-              <li><img src="http://farm3.static.flickr.com/2527/4068664368_57bd15ed73_s.jpg" alt="Photo 5" width="75" height="75" /></li>
-              <li><img src="http://farm4.static.flickr.com/3482/4068665066_1626e1ee2a_s.jpg" alt="Photo 6" width="75" height="75" /></li>
-            </ul>
-          </li>
-          <li>
-            <ul class="image-set">
-              <li><img src="http://farm3.static.flickr.com/2759/4067888657_777608f667_s.jpg" alt="Photo 7" width="75" height="75" /></li>
-              <li><img src="http://farm3.static.flickr.com/2759/4067888657_777608f667_s.jpg" alt="Photo 8" width="75" height="75" /></li>
-              <li><img src="http://farm3.static.flickr.com/2759/4067888657_777608f667_s.jpg" alt="Photo 9" width="75" height="75" /></li>
-            </ul>
-          </li>
-          <li>
-            <ul class="image-set">
-              <li><img src="http://farm3.static.flickr.com/2759/4067888657_777608f667_s.jpg" alt="Photo 10" width="75" height="75" /></li>
-              <li><img src="http://farm3.static.flickr.com/2759/4067888657_777608f667_s.jpg" alt="Photo 11" width="75" height="75" /></li>
-              <li><img src="http://farm3.static.flickr.com/2759/4067888657_777608f667_s.jpg" alt="Photo 12" width="75" height="75" /></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
     </div>
   </body>
   

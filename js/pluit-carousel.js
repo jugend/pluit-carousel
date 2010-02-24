@@ -1,3 +1,26 @@
+// pluit-carousel.js v1.0.0
+
+// Copyright (c) 2010 Herryanto Siatono (http://www.pluitsolutions.com)
+//
+// Permission is hereby granted, free of charge, to any person obtaining
+// a copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to
+// permit persons to whom the Software is furnished to do so, subject to
+// the following conditions:
+//
+// The above copyright notice and this permission notice shall be
+// included in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+// LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+// OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+// WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
 var Pluit = {};
 
 Pluit.Carousel = Class.create({
@@ -10,16 +33,16 @@ Pluit.Carousel = Class.create({
 
   initOptions: function(options) {
     this.options = {
-      viewportClassName: 'viewport',
       circular: false,
       hideAutoNav: false,
+      animDuration: 0.5,
+      viewportClassName: 'viewport',
       navClassName: 'nav',
       prevClassName: 'prev',
       nextClassName: 'next',
       pagesClassName: 'pages',
       pageClassNamePrefix: 'page-',
-      activeClassName: 'active',
-      animDuration: 0.5
+      activeClassName: 'active'
     };
     
     Object.extend(this.options, options || { });
@@ -29,7 +52,9 @@ Pluit.Carousel = Class.create({
     this.elCarousel = $(elCarousel);
     this.elViewport = this.elCarousel.down('.' + this.options.viewportClassName);
     this.elSlidesPanel = this.elViewport.firstDescendant();
-    this.elSlides = this.elViewport.getElementsByTagName('li');
+    // this.elSlides = this.elViewport.getElementsByTagName('li');
+    this.elSlides = this.elSlidesPanel.childElements();
+    
     this.elNav = this.elCarousel.down('.' + this.options.navClassName);
     this.maxPageNo = this.elSlides.length;
     
@@ -38,7 +63,7 @@ Pluit.Carousel = Class.create({
 
   initViewport: function() {
     // Resize viewport
-    if (this.elSlides.length == 0) {
+    if (this.elSlides.length === 0) {
       return;
     }
     
@@ -57,8 +82,6 @@ Pluit.Carousel = Class.create({
       width: (this.viewportWidth * this.maxPageNo + 500) + 'px'
     });
     
-    // console.log('Panel: ' + this.viewportWidth * this.maxPageNo);
-    
     this.elViewport.observe('click', this.onViewportClick.bindAsEventListener(this));
   },
 
@@ -71,8 +94,6 @@ Pluit.Carousel = Class.create({
     if (!this.elNav) {
       return;
     }
-    
-    // console.log('observe nav on click');
     
     this.elNav.observe('click', this.onNavClick.bindAsEventListener(this));
   },
@@ -104,8 +125,6 @@ Pluit.Carousel = Class.create({
   },
   
   getViewportDimension: function() {
-    var dimension = this.options.viewportDimension;
-    
     // Get first page width instead
     var firstPage = this.elSlides[0];
     return [firstPage.getWidth(), firstPage.getHeight()];
@@ -148,12 +167,10 @@ Pluit.Carousel = Class.create({
   
   // Helper Methods
   moveNext: function() {
-    // console.log('moveNext');
     this.movePage(this.curPageNo + 1);
   },
   
   movePrevious: function() {
-    // console.log('movePrevious');
     this.movePage(this.curPageNo -1);
   },
   

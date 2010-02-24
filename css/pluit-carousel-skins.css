@@ -35,64 +35,64 @@
 }
 
 /* Fancy Side Navigation Skin */
-.side-nav-skin {
+.custom-nav-skin {
   padding-bottom: 20px;
 }
 
-.side-nav-skin .nav {
+.custom-nav-skin .nav {
   position: absolute;
   top: 0;
   height: 100%;
 }
 
-.side-nav-skin .nav li {
+.custom-nav-skin .nav li {
   float: none;
 }
 
-.side-nav-skin .nav .prev, .side-nav-skin .nav .next {
+.custom-nav-skin .nav .prev, .custom-nav-skin .nav .next {
   position: absolute;
   top: 235px;
   left: 476px;
   width: 60px;
 }
 
-.side-nav-skin .nav .next {
+.custom-nav-skin .nav .next {
   left: 501px;
   top: 210px;
   z-index: 1;
 }
 
-.side-nav-skin .nav .prev a, .side-nav-skin .nav .next a {
+.custom-nav-skin .nav .prev a, .custom-nav-skin .nav .next a {
   width: 50px;
   height: 54px;
   background-position: 0 -85px;
 }
 
-.side-nav-skin .nav .prev a:hover {
+.custom-nav-skin .nav .prev a:hover {
   background-position: -80px -85px;
 }
 
-.side-nav-skin .nav .next a {
+.custom-nav-skin .nav .next a {
   background-position: -160px -85px;
 }
 
-.side-nav-skin .nav .next a:hover {
+.custom-nav-skin .nav .next a:hover {
   background-position: -240px -85px;
 }
 
-.side-nav-skin .nav .pages {
+.custom-nav-skin .nav .pages {
   position: absolute;
   top: 343px;
   width: 500px;
 }
 
-.side-nav-skin .nav .pages li a {
+.custom-nav-skin .nav .pages li a {
   width: 15px;
   height: 15px;
   background-position: 0 -40px;
 }
 
-.side-nav-skin .nav .pages li.active a {
+.custom-nav-skin .nav .pages li.active a {
   background-position: -46px -40px;
 }
 
@@ -143,7 +143,7 @@
 }
 
 .top-stories-skin .nav .pages li a {
-  width: 180px;
+  width: 200px;
   height: 45px;
   background: #eee;
   padding: 10px;
@@ -210,9 +210,3 @@
   height: 100%;
   width: 100%;
 }
-
-/* Square Skin */
-.square-skin {
-  
-}
-

@@ -32,6 +32,14 @@
   float: left;
 }
 
+.pluit-carousel .viewport ul ul {
+  width: auto;
+}
+
+.pluit-carousel .viewport ul ul li {
+  margin-right: 5px;
+}
+
 /* Navigation */
 .pluit-carousel .nav {
   border: 20px solid border;
