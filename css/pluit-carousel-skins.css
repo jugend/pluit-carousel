@@ -35,64 +35,64 @@
 }
 
 /* Fancy Side Navigation Skin */
-.custom-nav-skin {
+.fancy-nav-skin {
   padding-bottom: 20px;
 }
 
-.custom-nav-skin .nav {
+.fancy-nav-skin .nav {
   position: absolute;
   top: 0;
   height: 100%;
 }
 
-.custom-nav-skin .nav li {
+.fancy-nav-skin .nav li {
   float: none;
 }
 
-.custom-nav-skin .nav .prev, .custom-nav-skin .nav .next {
+.fancy-nav-skin .nav .prev, .fancy-nav-skin .nav .next {
   position: absolute;
   top: 235px;
   left: 476px;
   width: 60px;
 }
 
-.custom-nav-skin .nav .next {
+.fancy-nav-skin .nav .next {
   left: 501px;
   top: 210px;
   z-index: 1;
 }
 
-.custom-nav-skin .nav .prev a, .custom-nav-skin .nav .next a {
+.fancy-nav-skin .nav .prev a, .fancy-nav-skin .nav .next a {
   width: 50px;
   height: 54px;
   background-position: 0 -85px;
 }
 
-.custom-nav-skin .nav .prev a:hover {
+.fancy-nav-skin .nav .prev a:hover {
   background-position: -80px -85px;
 }
 
-.custom-nav-skin .nav .next a {
+.fancy-nav-skin .nav .next a {
   background-position: -160px -85px;
 }
 
-.custom-nav-skin .nav .next a:hover {
+.fancy-nav-skin .nav .next a:hover {
   background-position: -240px -85px;
 }
 
-.custom-nav-skin .nav .pages {
+.fancy-nav-skin .nav .pages {
   position: absolute;
   top: 343px;
   width: 500px;
 }
 
-.custom-nav-skin .nav .pages li a {
+.fancy-nav-skin .nav .pages li a {
   width: 15px;
   height: 15px;
   background-position: 0 -40px;
 }
 
-.custom-nav-skin .nav .pages li.active a {
+.fancy-nav-skin .nav .pages li.active a {
   background-position: -46px -40px;
 }
 

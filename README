@@ -9,6 +9,10 @@ See the included CHANGELOG file.
 == Usage
 
 
+== Source
+
+git clone git@github.com:jugend/pluit-carousel.git
+
 == License
 
 Copyright (c) 2010 Herryanto Siatono (http://www.pluitsolutions.com)

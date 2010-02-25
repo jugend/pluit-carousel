@@ -1,4 +1,86 @@
+html {
+  background: #f4efeb;
+}
+
 body {
-  font-family: "Lucida Grande", arial, serif;
+  background: #fff;
+  padding: 1px 15px 15px 15px;
+  width: 730px;
+  margin: 0 auto;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+}
+
+#hd {
+  margin-bottom: 2em;
+}
+
+#bd {
+  margin-bottom: 4em;
+}
+
+#ft {
+  padding: 10px;
+  background: #eee;
+}
+
+h1,h2, h3 {
+  color: #ba1820;
+  font-family: baskerville;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 3.5em;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.6em;
+  color: #000;
+}
+
+cite {
+  font-style: normal;
+}
+
+a {
+  color: #ba1820;
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  text-decoration: underline;
+}
+
+pre {
+  padding: 10px;
+  background: #eee;
+  color: #333;
   font-size: 12px;
+  overflow-x: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
+  white-space: pre-wrap; /* css-3 */
+  white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+  white-space: -pre-wrap; /* Opera 4-6 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+
+table th {
+  text-align: left;
+  background: #eee;
+}
+
+table th, table td {
+  padding: 7px 15px 5px;
+}
+
+table td {
+  border-bottom: 1px solid #eee;
+  color: #333;
 }
