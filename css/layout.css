@@ -84,3 +84,16 @@ table td {
   border-bottom: 1px solid #eee;
   color: #333;
 }
+
+ul.download li {
+  width: 200px;
+}
+
+ul.download li  a {
+  padding: 5px 10px;
+  display: block;
+}
+
+ul.download li a:hover {
+  background: #eee;
+} 
