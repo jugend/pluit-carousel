@@ -1,5 +1,20 @@
 == Pluit Carousel
 
+One of the most widely used Javascript widgets is carousel, it is 
+used everywhere from photo slides, product highlights, page navigation, 
+top stories panel, and others. All literally are carousel but with 
+different look and feel.
+
+Pluit Carousel is a simple carousel written to be as bare and simple as 
+possible; so you can use it right away, or easily customize to meet your 
+carousel needs. The idea is to use the same semantically structured HTML 
+and Javascript initialization codes, and applying different skins for 
+customized look and feel. And If you need more advanced behavior, you 
+can easily extend Pluit.Carousel.
+
+If you have created new skins that you would like to share with others, 
+ping me so that I can include the references on this page. Thanks!
+
 For more information, see http://www.pluitsolutions.com/projects/pluit-carousel
 
 == What's New?
@@ -8,8 +23,55 @@ See the included CHANGELOG file.
 
 == Usage
 
+1. Include the CSS:
+
+   <link rel="stylesheet" href="css/pluit-carousel.css" type="text/css" 
+      media="screen">
+
+2. Create the HTML tags:
+
+   <div class="pluit-carousel">
+     <div class="viewport">
+       <ul>
+         <li>
+           <img src="img/flickr/home_photo_megansoh.jpg" alt="Photo by megansoh" 
+              width="500" height="333" />
+         </li>
+         <li>
+           <img src="img/flickr/home_photo_ccgd.jpg" alt="Photo by ccgd" width="500" 
+              height="333" />
+         </li>
+         <li>
+           <img src="img/flickr/home_photo_lyn.jpg" alt="Photo by lyn" width="500" 
+              height="333" />
+         </li>
+       </ul>
+     </div>
+   </div>
+
+3. Include and initialize the JavaScripts:
+
+   <script type="text/javascript" src="js/prototype.js"></script>
+   <script type="text/javascript" src="js/scriptaculous.js"></script>
+   <script type="text/javascript" src="js/effects.js"></script>
+   <script type="text/javascript" src="js/pluit-carousel.js"></script>
+   <script type="text/javascript">
+     new Pluit.Carousel.init({
+       circular: true
+     });
+   </script>
+
+4. Customize your carousel style, sample customized skins are included in 
+   css/pluit-carousel-skins.css, append to pluit-carousel class,
+   e.g. big-nav-skin for larger navigation buttons:
+
+   <div class="pluit-carousel big-nav-skin">
+   ...
+   </div>
 
 == Source
+
+http://github.com/jugend/pluit-carousel
 
 git clone git@github.com:jugend/pluit-carousel.git
 

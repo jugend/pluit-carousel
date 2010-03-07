@@ -78,10 +78,6 @@ Pluit.Carousel = Class.create({
       height: this.viewportDimension[1] + 'px'
     });
     
-    this.elSlidesPanel.setStyle({
-      width: (this.viewportWidth * this.maxPageNo + 500) + 'px'
-    });
-    
     this.elViewport.observe('click', this.onViewportClick.bindAsEventListener(this));
   },
 
@@ -89,6 +85,7 @@ Pluit.Carousel = Class.create({
     this.elNav = this.elCarousel.down('.nav');
     if ((!this.elNav) && (!this.options.hideAutoNav)) {
       this.elNav = this.buildNavigation();
+      this.elNav = $(this.elNav);
     }
     
     if (!this.elNav) {
@@ -240,6 +237,10 @@ Pluit.Carousel = Class.create({
   },
   
   activatePageNav: function(pageNo) {
+    if (!this.elNav) {
+      return;
+    }
+    
     var elNavItem = this.elNav.down('.page-' + pageNo);
     var elCurNavItem = this.elNav.down('.page-' + this.curPageNo);
     

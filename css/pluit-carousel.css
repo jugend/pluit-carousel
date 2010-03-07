@@ -1,6 +1,5 @@
 /* Carousel */
 .pluit-carousel {
-  width: 10px;
   position: relative;
   margin-bottom: 1em;
 }
@@ -19,8 +18,10 @@
 
 /* Viewport */
 .pluit-carousel .viewport {
+  width: 1px;
   margin-bottom: 10px;
   overflow: hidden;
+  position: relative;
 }
 
 .pluit-carousel .viewport ul {
@@ -34,6 +35,7 @@
 
 .pluit-carousel .viewport ul ul {
   width: auto;
+  float: left;
 }
 
 .pluit-carousel .viewport ul ul li {
@@ -42,22 +44,14 @@
 
 /* Navigation */
 .pluit-carousel .nav {
-  border: 20px solid border;
-}
-
-.pluit-carousel .nav {
   padding: 0 3px;
-}
-
-.pluit-carousel .nav li {
-/*  float: left;*/
 }
 
 .pluit-carousel .nav li a {
   display: block;
   overflow: hidden;
   text-indent: -100em;
-  background: url(../images/carousel_nav.png) no-repeat 0 0;
+  background: url(../img/carousel_nav.png) no-repeat 0 0;
   outline: none;
 }
 
@@ -94,6 +88,10 @@
 
 .pluit-carousel .nav .pages {
  float: left;
+}
+
+.pluit-carousel .nav .pages ul {
+  float: left;
 }
 
 .pluit-carousel .nav .pages li {
