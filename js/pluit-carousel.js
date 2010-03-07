@@ -52,7 +52,6 @@ Pluit.Carousel = Class.create({
     this.elCarousel = $(elCarousel);
     this.elViewport = this.elCarousel.down('.' + this.options.viewportClassName);
     this.elSlidesPanel = this.elViewport.firstDescendant();
-    // this.elSlides = this.elViewport.getElementsByTagName('li');
     this.elSlides = this.elSlidesPanel.childElements();
     
     this.elNav = this.elCarousel.down('.' + this.options.navClassName);
@@ -125,14 +124,6 @@ Pluit.Carousel = Class.create({
     // Get first page width instead
     var firstPage = this.elSlides[0];
     return [firstPage.getWidth(), firstPage.getHeight()];
-  },
-  
-  getPagesPanelWidth: function() {
-    var length = 0;
-    for (var i=0; i<this.elSlides; i++) {
-      length += this.elSlides.getWidth();
-    }
-    return length;
   },
   
   // Event Listeners
