@@ -29,6 +29,9 @@ Pluit.Carousel = Class.create({
     this.initElements(elCarousel);
     this.initViewport();
     this.initNavigation();
+    if (this.options.autoPlay) {
+      this.play();
+    }
   },
 
   initOptions: function(options) {
@@ -36,6 +39,8 @@ Pluit.Carousel = Class.create({
       circular: false,
       hideAutoNav: false,
       animDuration: 0.5,
+      autoPlay: false,
+      slideDuration: 3,
       viewportClassName: 'viewport',
       navClassName: 'nav',
       prevClassName: 'prev',
@@ -192,6 +197,13 @@ Pluit.Carousel = Class.create({
     });
     
     this.curPageNo = pageNo;
+  },
+  
+  play: function() {
+    setTimeout(function() {
+      this.moveNext();
+      this.play();
+    }.bind(this), this.options.slideDuration * 1000);
   },
   
   isMovePrevious: function(pageNo, curPageNo) {
