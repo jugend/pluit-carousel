@@ -49,7 +49,7 @@ Pluit.Carousel = Class.create({
       pageClassNamePrefix: 'page-',
       activeClassName: 'active'
     };
-    
+
     Object.extend(this.options, options || { });
   },
 
@@ -58,10 +58,10 @@ Pluit.Carousel = Class.create({
     this.elViewport = this.elCarousel.down('.' + this.options.viewportClassName);
     this.elSlidesPanel = this.elViewport.firstDescendant();
     this.elSlides = this.elSlidesPanel.childElements();
-    
+
     this.elNav = this.elCarousel.down('.' + this.options.navClassName);
     this.maxPageNo = this.elSlides.length;
-    
+
     this.prevPageNo = this.curPageNo = 1;
   },
 
@@ -70,18 +70,18 @@ Pluit.Carousel = Class.create({
     if (this.elSlides.length === 0) {
       return;
     }
-    
+
     this.viewportDimension = this.getViewportDimension();
-    
+
     this.elCarousel.setStyle({
       width: this.viewportDimension[0] + 'px'
     });
-    
+
     this.elViewport.setStyle({
       width: this.viewportDimension[0] + 'px',
       height: this.viewportDimension[1] + 'px'
     });
-    
+
     this.elViewport.observe('click', this.onViewportClick.bindAsEventListener(this));
   },
 
@@ -91,11 +91,11 @@ Pluit.Carousel = Class.create({
       this.elNav = this.buildNavigation();
       this.elNav = $(this.elNav);
     }
-    
+
     if (!this.elNav) {
       return;
     }
-    
+
     this.elNav.observe('click', this.onNavClick.bindAsEventListener(this));
   },
 
@@ -104,6 +104,9 @@ Pluit.Carousel = Class.create({
     elNav.className = 'nav';
 
     var navHTML = '';
+
+    navHTML += '<li class="' + this.options.prevClassName + '"><a href="#">Prev</a></li>';
+
     if (this.maxPageNo > 0) {
       navHTML += '<li class="' + this.options.pagesClassName + '"><ul>';
       for (var i=0; i<this.maxPageNo; i++) {
@@ -115,29 +118,28 @@ Pluit.Carousel = Class.create({
       }
       navHTML += '</ul></li>';
     }
-    
+
     navHTML += '<li class="' + this.options.nextClassName + '"><a href="#">Next</a></li>';
-    navHTML += '<li class="' + this.options.prevClassName + '"><a href="#">Prev</a></li>';
-  
+
     elNav.innerHTML = navHTML;
     this.elCarousel.insert(elNav);
-    
+
     return elNav;
   },
-  
+
   getViewportDimension: function() {
     // Get first page width instead
     var firstPage = this.elSlides[0];
     return [firstPage.getWidth(), firstPage.getHeight()];
   },
-  
+
   // Event Listeners
   onNavClick: function(e) {
     var navItem = e.findElement('li');
     if (!navItem) {
       return;
     }
-    
+
     var className = navItem.className;
     if (className === this.options.prevClassName) {
       this.movePrevious();
@@ -147,47 +149,47 @@ Pluit.Carousel = Class.create({
       var pageNo = parseInt(className.split('-')[1], 10);
       this.movePage(pageNo);
     }
-    
+
     e.preventDefault();
   },
 
   onViewportClick: function(e) {
     var parentNode = e.element().parentNode;
-    if ((parentNode.tagName !== 'A') && (parentNode.tagName === 'LI')) {
+    if ((e.element().tagName !== 'A') && (parentNode.tagName !== 'A') && (parentNode.tagName === 'LI')) {
       this.moveNext();
     }
   },
-  
+
   // Helper Methods
   moveNext: function() {
     this.movePage(this.curPageNo + 1);
   },
-  
+
   movePrevious: function() {
     this.movePage(this.curPageNo -1);
   },
-  
+
   movePage: function(pageNo) {
     // Ignore when carousel is in animated state
     if (this.onTheMove) {
       return;
     }
-    
+
     // No changes, do nothing
     if (pageNo === this.curPageNo) {
       return;
     }
-    
+
     // Check for valid pageNo, reset pageNo if required
     pageNo = this.checkPageNo(pageNo, this.curPageNo);
-    
+
     // Check distance
     var distance = this.getMoveDistance(pageNo, this.curPageNo);
-    
+
     this.onTheMove = true;
-    
+
     this.activatePageNav(pageNo);
-    
+
     new Effect.Move(this.elSlidesPanel, {
       x: distance,
       duration: this.options.animDuration,
@@ -195,30 +197,30 @@ Pluit.Carousel = Class.create({
         this.onTheMove = false;
       }.bind(this)
     });
-    
+
     this.curPageNo = pageNo;
   },
-  
+
   play: function() {
     setTimeout(function() {
       this.moveNext();
       this.play();
     }.bind(this), this.options.slideDuration * 1000);
   },
-  
+
   isMovePrevious: function(pageNo, curPageNo) {
     if (pageNo < curPageNo) {
       return true;
     }
   },
-  
+
   getMoveDistance: function(pageNo, curPageNo) {
     var distance = 0;
-    
+
     if (pageNo === curPageNo) {
       return distance;
     }
-    
+
     var isPrevious = this.isMovePrevious(pageNo, curPageNo);
     if (isPrevious) {
       // Move Previous
@@ -226,7 +228,7 @@ Pluit.Carousel = Class.create({
         distance += this.elSlides[pageNo - 1].getWidth();
         pageNo += 1;
       }
-      
+
       return distance;
     } else {
       // Move Next
@@ -234,30 +236,30 @@ Pluit.Carousel = Class.create({
         distance += this.elSlides[pageNo - 2].getWidth();
         pageNo -= 1;
       }
-      
+
       return -distance;
     }
   },
-  
+
   activatePageNav: function(pageNo) {
     if (!this.elNav) {
       return;
     }
-    
+
     var elNavItem = this.elNav.down('.page-' + pageNo);
     var elCurNavItem = this.elNav.down('.page-' + this.curPageNo);
-    
+
     if (!elNavItem && !elCurNavItem) {
       return;
     }
-    
+
     elCurNavItem.removeClassName(this.options.activeClassName);
     elNavItem.addClassName(this.options.activeClassName);
   },
-  
+
   checkPageNo: function(pageNo, curPageNo) {
     var isPrevious = this.isMovePrevious(pageNo, curPageNo);
-    
+
     if (isPrevious) {
       if (pageNo < 1) {
         if (this.options.circular) {
@@ -275,7 +277,7 @@ Pluit.Carousel = Class.create({
         }
       }
     }
-    
+
     return pageNo;
   }
 });
@@ -287,11 +289,11 @@ Pluit.Carousel.init = function() {
   if (typeof cssRules.last() === 'object') {
     options = cssRules.pop();
   }
-  
+
   if (cssRules.length === 0) {
     cssRules = ['.pluit-carousel'];
   }
-  
+
   document.observe("dom:loaded", function() {
     $A(cssRules).each(function(cssRule) {
       $$(cssRule).each(function(carousel) {
