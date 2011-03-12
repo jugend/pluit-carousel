@@ -18,7 +18,6 @@
 
 /* Viewport */
 .pluit-carousel .viewport {
-  width: 1px;
   margin-bottom: 10px;
   overflow: hidden;
   position: relative;
@@ -44,7 +43,9 @@
 
 /* Navigation */
 .pluit-carousel .nav {
+  position: relative;
   padding: 0 3px;
+  height: 10px;
 }
 
 .pluit-carousel .nav li a {
@@ -59,13 +60,14 @@
   background-position: -46px 0;
 }
 
-.pluit-carousel .nav .prev, .pluit-carousel .nav .next {
-  float: right;
-  margin-right: 7px;
+.pluit-carousel .nav .prev {
+  position: absolute;
+  right: 22px;
 }
 
 .pluit-carousel .nav .next {
-  margin-right: 3px;
+  position: absolute;
+  right: 5px;
 }
 
 .pluit-carousel .nav .prev a, .pluit-carousel .nav .next a {
@@ -87,7 +89,9 @@
 }
 
 .pluit-carousel .nav .pages {
- float: left;
+  position: absolute;
+  top: 0px;
+  left: 2px;
 }
 
 .pluit-carousel .nav .pages ul {

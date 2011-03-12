@@ -105,9 +105,20 @@
   &lt;script type=&quot;text/javascript&quot; src=&quot;js/effects.js&quot;&gt;&lt;/script&gt;
   &lt;script type=&quot;text/javascript&quot; src=&quot;js/pluit-carousel.js&quot;&gt;&lt;/script&gt;
   &lt;script type=&quot;text/javascript&quot;&gt;
-    new Pluit.Carousel.init({
+    // Initialize all carousels with .pluit-carousel class
+    Pluit.Carousel.init({
       circular: true
     });
+
+    // To initialize a single carousel through an element ID
+    // new Pluit.Carousel('carousel1', {
+    //  circular: true
+    // });
+    
+    // To initialize multiple carousels through element IDs, e.g.
+    // Pluit.Carousel.init('#carousel1', '#carousel2', '#carousel3', {
+    //  circular: true
+    // });
   &lt;/script&gt;</pre>
         </li>
         <li>Customize your carousel style, sample customized skins are included in <code>css/pluit-carousel-skins.css</code>, 
@@ -320,12 +331,17 @@
   <script type="text/javascript" src="js/pluit-carousel.js"></script>
   <script type="text/javascript">
     // Default - Initialize all .pluit-carousel found
-    new Pluit.Carousel.init({
+    Pluit.Carousel.init({
       circular: true
     });
     
-    // Initialize with Element IDs
-    // new Pluit.Carousel.init('#carousel-1', '#carousel-2', '#carousel-3', {
+    // Initialize a single carousel through an element ID
+    // new Pluit.Carousel('carousel1', {
+    //  circular: true
+    // });
+    
+    // Initialize with multiple carousels through element IDs
+    // Pluit.Carousel.init('#carousel-1', '#carousel-2', '#carousel-3', {
     //   circular: true
     // });
   </script>

@@ -1,3 +1,9 @@
+1.2.0
+  * Default skin: Fix previous and next navigation buttons in reversed order
+  * Default Skin: Remove viewport width set to 1px to ensure when javascript is disabled, images are not hidden
+  * Remove 'new' keywoard from Pluit.Carousel.init
+  * Add carousel initialization example through single and multiple element IDs
+  
 1.1.0
   * Add autoPlay and slideDuration feature
 

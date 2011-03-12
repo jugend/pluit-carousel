@@ -282,23 +282,27 @@ Pluit.Carousel = Class.create({
   }
 });
 
-Pluit.Carousel.init = function() {
-  var cssRules = $A(arguments);
-  var options = null;
+Object.extend(Pluit.Carousel, {
+  Version: '1.2.0',
+  
+  init: function() {
+    var cssRules = $A(arguments);
+    var options = null;
 
-  if (typeof cssRules.last() === 'object') {
-    options = cssRules.pop();
-  }
+    if (typeof cssRules.last() === 'object') {
+      options = cssRules.pop();
+    }
 
-  if (cssRules.length === 0) {
-    cssRules = ['.pluit-carousel'];
-  }
+    if (cssRules.length === 0) {
+      cssRules = ['.pluit-carousel'];
+    }
 
-  document.observe("dom:loaded", function() {
-    $A(cssRules).each(function(cssRule) {
-      $$(cssRule).each(function(carousel) {
-        new Pluit.Carousel(carousel, options);
-      }.bind(this));
+    document.observe("dom:loaded", function() {
+      $A(cssRules).each(function(cssRule) {
+        $$(cssRule).each(function(carousel) {
+          new Pluit.Carousel(carousel, options);
+        }.bind(this));
+      });
     });
-  });
-};
+  }
+});
