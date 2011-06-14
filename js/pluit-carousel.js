@@ -24,6 +24,20 @@
 var Pluit = {};
 
 Pluit.Carousel = Class.create({
+  initialize: function() {
+    var elements = $A(arguments);
+    var options = {};
+    if (typeof elements.last() === 'object') {
+      options = elements.pop();
+    }
+    
+    elements.each(function(element) {
+      new Pluit.Carousel.Element(element, options);
+    });
+  }
+});
+
+Pluit.Carousel.Element = Class.create({
   initialize: function(elCarousel, options) {
     this.initOptions(options);
     this.initElements(elCarousel);
@@ -54,6 +68,12 @@ Pluit.Carousel = Class.create({
   },
 
   initElements: function(elCarousel) {
+    if (Object.isString(elCarousel)) {
+      if (elCarousel.startsWith('#')) {
+        elCarousel = elCarousel.substring(1);
+      }
+    }
+    
     this.elCarousel = $(elCarousel);
     this.elViewport = this.elCarousel.down('.' + this.options.viewportClassName);
     this.elSlidesPanel = this.elViewport.firstDescendant();
@@ -190,13 +210,32 @@ Pluit.Carousel = Class.create({
 
     this.activatePageNav(pageNo);
 
-    new Effect.Move(this.elSlidesPanel, {
-      x: distance,
-      duration: this.options.animDuration,
-      afterFinish: function() {
-        this.onTheMove = false;
-      }.bind(this)
-    });
+    if (this.options.effect === 'fade') {
+      var duration = this.options.animDuration / 2;
+      new Effect.Fade(this.elSlidesPanel, {
+        duration: duration,
+        afterFinish: function() {
+          new Effect.Move(this.elSlidesPanel, {
+            x: distance,
+            duration: 0,
+            afterFinish: function() {
+              this.onTheMove = false;
+              new Effect.Appear(this.elSlidesPanel, {
+                duration: duration,
+              });
+            }.bind(this)
+          }); 
+        }.bind(this)
+      });
+    } else {
+      new Effect.Move(this.elSlidesPanel, {
+        x: distance,
+        duration: this.options.animDuration,
+        afterFinish: function() {
+          this.onTheMove = false;
+        }.bind(this)
+      }); 
+    }
 
     this.curPageNo = pageNo;
   },

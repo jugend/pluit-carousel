@@ -32,7 +32,7 @@ See the included CHANGELOG file.
 
 2. Create the HTML tags:
 
-   <div class="pluit-carousel">
+   <div id="carousel-1" class="pluit-carousel">
      <div class="viewport">
        <ul>
          <li>
@@ -58,8 +58,15 @@ See the included CHANGELOG file.
    <script type="text/javascript" src="js/effects.js"></script>
    <script type="text/javascript" src="js/pluit-carousel.js"></script>
    <script type="text/javascript">
-     new Pluit.Carousel.init({
+     // To initialize a single carousel
+     new Pluit.Carousel('#carousel-1', {
        circular: true
+     });
+     
+     // To initialize multiple carousels with fade effect 
+     new Pluit.Carousel('#carousel-1', '#carousel-2', '#carousel-3', {
+       circular: true,
+       effect: 'fade'
      });
    </script>
 
@@ -67,7 +74,7 @@ See the included CHANGELOG file.
    css/pluit-carousel-skins.css, append to pluit-carousel class,
    e.g. big-nav-skin for larger navigation buttons:
 
-   <div class="pluit-carousel big-nav-skin">
+   <div id="carousel-1" class="pluit-carousel big-nav-skin">
    ...
    </div>
 

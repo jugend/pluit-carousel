@@ -1,3 +1,7 @@
+1.3.0
+  * Add support for elmeent id prefix '#'
+  * Add fade effect
+
 1.2.0
   * Default skin: Fix previous and next navigation buttons in reversed order
   * Default Skin: Remove viewport width set to 1px to ensure when javascript is disabled, images are not hidden
