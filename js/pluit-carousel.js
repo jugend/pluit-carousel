@@ -221,7 +221,7 @@ Pluit.Carousel.Element = Class.create({
             afterFinish: function() {
               this.onTheMove = false;
               new Effect.Appear(this.elSlidesPanel, {
-                duration: duration,
+                duration: duration
               });
             }.bind(this)
           }); 
