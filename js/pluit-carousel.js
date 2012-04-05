@@ -148,9 +148,19 @@ Pluit.Carousel.Element = Class.create({
   },
 
   getViewportDimension: function() {
-    // Get first page width instead
+    // Get the width of the first slide and the height of tallest slide.
     var firstPage = this.elSlides[0];
-    return [firstPage.getWidth(), firstPage.getHeight()];
+		var viewportHeight = 0;
+		
+		for (var i = 0; i < this.elSlides.length; i++) {
+			var slideHeight = this.elSlides[i].getHeight()
+			
+			if (slideHeight > viewportHeight) {
+				viewportHeight = slideHeight;
+			}
+		}
+		
+		return [firstPage.getWidth(), viewportHeight];
   },
 
   // Event Listeners
