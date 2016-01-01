@@ -23,14 +23,14 @@ See the included CHANGELOG file.
 
 ## Usage
 
-1. Include the CSS:
+- Include the CSS:
 
 ```html
    <link rel="stylesheet" href="css/pluit-carousel.css" type="text/css" 
       media="screen">
 ```
 
-2. Create the HTML tags:
+- Create the HTML tags:
 
 ```html
    <div id="carousel-1" class="pluit-carousel">
@@ -53,7 +53,7 @@ See the included CHANGELOG file.
    </div>
 ```
 
-3. Include and initialize the JavaScripts:
+- Include and initialize the JavaScripts:
 
 ```html
    <script type="text/javascript" src="js/prototype.js"></script>
@@ -74,7 +74,7 @@ See the included CHANGELOG file.
    </script>
 ```
 
-4. Customize your carousel style, sample customized skins are included in 
+- Customize your carousel style, sample customized skins are included in 
    css/pluit-carousel-skins.css, append to pluit-carousel class,
    e.g. big-nav-skin for larger navigation buttons:
 
