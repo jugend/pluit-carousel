@@ -84,7 +84,7 @@ See the included CHANGELOG file.
    </div>
 ```
 
-== License
+## License
 
 Copyright (c) 2010 Herryanto Siatono
 
