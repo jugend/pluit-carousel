@@ -1,4 +1,4 @@
-== Pluit Carousel
+# Pluit Carousel
 
 One of the most widely used Javascript widgets is carousel, it is 
 used everywhere from photo slides, product highlights, page navigation, 
@@ -17,21 +17,22 @@ ping me so that I can include the references on this page. Thanks!
 
 Tested on Prototype 1.6.1 and Scriptaculous 1.8.3.
 
-For more information, see http://www.pluitsolutions.com/projects/pluit-carousel
-
-== What's New?
+## What's New?
 
 See the included CHANGELOG file.
 
-== Usage
+## Usage
 
 1. Include the CSS:
 
+```html
    <link rel="stylesheet" href="css/pluit-carousel.css" type="text/css" 
       media="screen">
+```
 
 2. Create the HTML tags:
 
+```html
    <div id="carousel-1" class="pluit-carousel">
      <div class="viewport">
        <ul>
@@ -50,9 +51,11 @@ See the included CHANGELOG file.
        </ul>
      </div>
    </div>
+```
 
 3. Include and initialize the JavaScripts:
 
+```html
    <script type="text/javascript" src="js/prototype.js"></script>
    <script type="text/javascript" src="js/scriptaculous.js"></script>
    <script type="text/javascript" src="js/effects.js"></script>
@@ -69,24 +72,21 @@ See the included CHANGELOG file.
        effect: 'fade'
      });
    </script>
+```
 
 4. Customize your carousel style, sample customized skins are included in 
    css/pluit-carousel-skins.css, append to pluit-carousel class,
    e.g. big-nav-skin for larger navigation buttons:
 
+```html
    <div id="carousel-1" class="pluit-carousel big-nav-skin">
    ...
    </div>
-
-== Source
-
-http://github.com/jugend/pluit-carousel
-
-git clone git@github.com:jugend/pluit-carousel.git
+```
 
 == License
 
-Copyright (c) 2010 Herryanto Siatono (http://www.pluitsolutions.com)
+Copyright (c) 2010 Herryanto Siatono
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
